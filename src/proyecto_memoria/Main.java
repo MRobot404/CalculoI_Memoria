@@ -37,10 +37,12 @@ public void start(){
     myTimer.scheduleAtFixedRate(task,1000, 1000);
     
 }
-public static int p1,p2,p3,p4,p5,p6,p7,p8;
+public static int p1,p2,p3,p4,p5,p6,p7,p8,puntosacumulativos;
 public static String descripcion1=null,descripcion2=null;
 public void salir(){
     this.dispose();
+    JOptionPane.showMessageDialog(rootPane, "PUNTOS "+puntosacumulativos);
+    
 }
   public void verificar(){
       if (p1>=2) {
@@ -48,7 +50,22 @@ public void salir(){
          Boton1.setEnabled(false);
        jLabel5.setIcon(null);
          Boton2.setEnabled(false);
-     
+       puntosacumulativos=puntosacumulativos+10;
+       p1=0;
+      } else if (p2>=2) {
+         jLabel6.setIcon(null);
+         Boton3.setEnabled(false);
+       jLabel9.setIcon(null);
+         Boton6.setEnabled(false);
+       puntosacumulativos=puntosacumulativos+10;
+       p2=0;
+      }else if (p3>=2) {
+         jLabel7.setIcon(null);
+         Boton4.setEnabled(false);
+       jLabel11.setIcon(null);
+         Boton8.setEnabled(false);
+       puntosacumulativos=puntosacumulativos+10;
+       p3=0;
       }
   }
   
@@ -61,6 +78,28 @@ public void salir(){
 
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        Boton16 = new javax.swing.JToggleButton();
+        jLabel18 = new javax.swing.JLabel();
+        Boton15 = new javax.swing.JToggleButton();
+        jLabel17 = new javax.swing.JLabel();
+        Boton14 = new javax.swing.JToggleButton();
+        jLabel16 = new javax.swing.JLabel();
+        Boton13 = new javax.swing.JToggleButton();
+        jLabel15 = new javax.swing.JLabel();
+        Boton12 = new javax.swing.JToggleButton();
+        jLabel14 = new javax.swing.JLabel();
+        Boton11 = new javax.swing.JToggleButton();
+        jLabel13 = new javax.swing.JLabel();
+        Boton10 = new javax.swing.JToggleButton();
+        jLabel12 = new javax.swing.JLabel();
+        Boton9 = new javax.swing.JToggleButton();
+        jLabel11 = new javax.swing.JLabel();
+        Boton8 = new javax.swing.JToggleButton();
+        jLabel10 = new javax.swing.JLabel();
+        Boton7 = new javax.swing.JToggleButton();
+        jLabel9 = new javax.swing.JLabel();
+        Boton6 = new javax.swing.JToggleButton();
         jLabel8 = new javax.swing.JLabel();
         Boton5 = new javax.swing.JToggleButton();
         jLabel7 = new javax.swing.JLabel();
@@ -74,9 +113,9 @@ public void salir(){
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1280, 720));
-        setMinimumSize(new java.awt.Dimension(1280, 720));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setMaximumSize(new java.awt.Dimension(1280, 730));
+        setMinimumSize(new java.awt.Dimension(1280, 730));
+        setPreferredSize(new java.awt.Dimension(1280, 730));
         getContentPane().setLayout(null);
 
         jLabel3.setFont(new java.awt.Font("Mortal Kombat Mythologies", 0, 24)); // NOI18N
@@ -89,9 +128,163 @@ public void salir(){
         getContentPane().add(jLabel2);
         jLabel2.setBounds(1210, 30, 60, 30);
 
+        jLabel19.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(740, 550, 150, 150);
+
+        Boton16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton16.setBorder(null);
+        Boton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton16ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton16);
+        Boton16.setBounds(740, 550, 150, 150);
+
+        jLabel18.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(560, 550, 150, 150);
+
+        Boton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton15.setBorder(null);
+        Boton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton15ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton15);
+        Boton15.setBounds(560, 550, 150, 150);
+
+        jLabel17.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(380, 550, 150, 150);
+
+        Boton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton14.setBorder(null);
+        Boton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton14ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton14);
+        Boton14.setBounds(380, 550, 150, 150);
+
+        jLabel16.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(200, 550, 150, 150);
+
+        Boton13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton13.setBorder(null);
+        Boton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton13);
+        Boton13.setBounds(200, 550, 150, 150);
+
+        jLabel15.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(740, 370, 150, 150);
+
+        Boton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton12.setBorder(null);
+        Boton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton12);
+        Boton12.setBounds(740, 370, 150, 150);
+
+        jLabel14.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(560, 370, 150, 150);
+
+        Boton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton11.setBorder(null);
+        Boton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton11);
+        Boton11.setBounds(560, 370, 150, 150);
+
+        jLabel13.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(380, 370, 150, 150);
+
+        Boton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton10.setBorder(null);
+        Boton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton10);
+        Boton10.setBounds(380, 370, 150, 150);
+
+        jLabel12.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(200, 370, 150, 150);
+
+        Boton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton9.setBorder(null);
+        Boton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton9);
+        Boton9.setBounds(200, 370, 150, 150);
+
+        jLabel11.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(740, 190, 150, 150);
+
+        Boton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton8.setBorder(null);
+        Boton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton8);
+        Boton8.setBounds(740, 190, 150, 150);
+
+        jLabel10.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(560, 190, 150, 150);
+
+        Boton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton7.setBorder(null);
+        Boton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton7);
+        Boton7.setBounds(560, 190, 150, 150);
+
+        jLabel9.setMaximumSize(new java.awt.Dimension(150, 150));
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(380, 190, 150, 150);
+
+        Boton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
+        Boton6.setBorder(null);
+        Boton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Boton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Boton6);
+        Boton6.setBounds(380, 190, 150, 150);
+
         jLabel8.setMaximumSize(new java.awt.Dimension(150, 150));
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(740, 20, 150, 150);
+        jLabel8.setBounds(200, 190, 150, 150);
 
         Boton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/fondo.jpg"))); // NOI18N
         Boton5.setBorder(null);
@@ -101,7 +294,7 @@ public void salir(){
             }
         });
         getContentPane().add(Boton5);
-        Boton5.setBounds(200, 210, 150, 150);
+        Boton5.setBounds(200, 190, 150, 150);
 
         jLabel7.setMaximumSize(new java.awt.Dimension(150, 150));
         getContentPane().add(jLabel7);
@@ -161,7 +354,7 @@ public void salir(){
         jLabel1.setMaximumSize(new java.awt.Dimension(1280, 720));
         jLabel1.setMinimumSize(new java.awt.Dimension(1280, 720));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 1281, 720);
+        jLabel1.setBounds(0, 0, 1281, 730);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -201,21 +394,95 @@ public void salir(){
           ImageIcon sonic= new ImageIcon (getClass().getResource("/Imagenes/2p.jpg"));
             ImageIcon icono= new ImageIcon (sonic.getImage().getScaledInstance(jLabel6.getWidth(), jLabel6.getHeight(),Image.SCALE_DEFAULT ));
             jLabel6.setIcon(icono); 
-       
+            p2=p2+1;
         }else{
             jLabel6.setIcon(null);
-            p1=0;
+            p2=0;
         }
           verificar();
     }//GEN-LAST:event_Boton3ActionPerformed
 
     private void Boton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton4ActionPerformed
         // TODO add your handling code here:
+       if (Boton4.isSelected()) {
+          ImageIcon sonic= new ImageIcon (getClass().getResource("/Imagenes/3p.png"));
+            ImageIcon icono= new ImageIcon (sonic.getImage().getScaledInstance(jLabel7.getWidth(), jLabel7.getHeight(),Image.SCALE_DEFAULT ));
+            jLabel7.setIcon(icono); 
+            p3=p3+1;
+        }else{
+            jLabel7.setIcon(null);
+            p3=0;
+        }
+          verificar();  
     }//GEN-LAST:event_Boton4ActionPerformed
 
     private void Boton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Boton5ActionPerformed
+
+    private void Boton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton6ActionPerformed
+        // TODO add your handling code here:
+        if (Boton6.isSelected()) {
+          ImageIcon sonic= new ImageIcon (getClass().getResource("/Imagenes/2r.jpg"));
+            ImageIcon icono= new ImageIcon (sonic.getImage().getScaledInstance(jLabel9.getWidth(), jLabel9.getHeight(),Image.SCALE_DEFAULT ));
+            jLabel9.setIcon(icono); 
+       p2=p2+1;
+        }else{
+            jLabel9.setIcon(null);
+            p2=0;
+        }
+          verificar();
+    }//GEN-LAST:event_Boton6ActionPerformed
+
+    private void Boton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton7ActionPerformed
+
+    private void Boton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton8ActionPerformed
+        // TODO add your handling code here:
+          if (Boton8.isSelected()) {
+          ImageIcon sonic= new ImageIcon (getClass().getResource("/Imagenes/3r.png"));
+            ImageIcon icono= new ImageIcon (sonic.getImage().getScaledInstance(jLabel11.getWidth(), jLabel11.getHeight(),Image.SCALE_DEFAULT ));
+            jLabel11.setIcon(icono); 
+       p3=p3+1;
+        }else{
+            jLabel11.setIcon(null);
+            p3=0;
+        }
+          verificar();
+    }//GEN-LAST:event_Boton8ActionPerformed
+
+    private void Boton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton9ActionPerformed
+
+    private void Boton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton10ActionPerformed
+
+    private void Boton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton11ActionPerformed
+
+    private void Boton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton12ActionPerformed
+
+    private void Boton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton13ActionPerformed
+
+    private void Boton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton14ActionPerformed
+
+    private void Boton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton15ActionPerformed
+
+    private void Boton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Boton16ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,11 +516,32 @@ public void salir(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton Boton1;
+    private javax.swing.JToggleButton Boton10;
+    private javax.swing.JToggleButton Boton11;
+    private javax.swing.JToggleButton Boton12;
+    private javax.swing.JToggleButton Boton13;
+    private javax.swing.JToggleButton Boton14;
+    private javax.swing.JToggleButton Boton15;
+    private javax.swing.JToggleButton Boton16;
     private javax.swing.JToggleButton Boton2;
     private javax.swing.JToggleButton Boton3;
     private javax.swing.JToggleButton Boton4;
     private javax.swing.JToggleButton Boton5;
+    private javax.swing.JToggleButton Boton6;
+    private javax.swing.JToggleButton Boton7;
+    private javax.swing.JToggleButton Boton8;
+    private javax.swing.JToggleButton Boton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -261,5 +549,6 @@ public void salir(){
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
