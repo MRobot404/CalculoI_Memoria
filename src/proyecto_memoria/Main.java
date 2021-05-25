@@ -49,7 +49,7 @@ public class Main extends javax.swing.JFrame {
         if (modificar != null) {
             modificar.setNombre(nombreobtenido);
             modificar.setId(id);
-            modificar.setPunteo(puntosacumulativos);   
+            modificar.setPunteo(puntosacumulativos);
 
         } else {
             JOptionPane.showMessageDialog(rootPane, "Debe buscar un producto por nombre");
@@ -66,10 +66,15 @@ public class Main extends javax.swing.JFrame {
             jLabel2.setText(String.valueOf(secondspassed));
             if (secondspassed >= 45) {
                 salir();
-
+                secondspassed = 0;
             }
         }
+
     };
+
+    public void detener() {
+        secondspassed--;
+    }
 
     public void start() {
         myTimer.scheduleAtFixedRate(task, 1000, 1000);
@@ -85,7 +90,8 @@ public class Main extends javax.swing.JFrame {
         Modificardatos();
         Pantalla2 ver = new Pantalla2();
         ver.setVisible(true);
- 
+        detener();
+        System.out.print(secondspassed+" ");
     }
 
     public void verificar() {
