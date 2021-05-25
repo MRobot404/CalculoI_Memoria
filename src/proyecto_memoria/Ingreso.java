@@ -74,6 +74,7 @@ public class Ingreso extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String jugador1 = Jugador1.getText();
+        int id=Main.jugadores.size();
         int puntos = 0;
         Usuarios u = new Usuarios();
         if (Jugador1.getText().isEmpty()) {
@@ -81,6 +82,7 @@ JOptionPane.showMessageDialog(rootPane,"Por favor escriba un nombre");
         } else {
             u.setNombre(jugador1);
             u.setPunteo(puntos);
+            u.setId(id);
             Jugador1.setText("");
             Main.jugadores.add(u);
             conteoDeIngreso = conteoDeIngreso + 1;

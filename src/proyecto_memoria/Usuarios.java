@@ -1,6 +1,7 @@
 package proyecto_memoria;
 //@author MRobot404
 public class Usuarios {
+private int id;    
 private String nombre;
 private int punteo;
 
@@ -30,6 +31,20 @@ private int punteo;
      */
     public void setPunteo(int punteo) {
         this.punteo = punteo;
+    }
+
+    /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
     }
 
 
