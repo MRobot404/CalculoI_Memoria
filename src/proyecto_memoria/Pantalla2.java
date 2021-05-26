@@ -15,12 +15,12 @@ import static proyecto_memoria.Main.p5;
 import static proyecto_memoria.Main.p6;
 import static proyecto_memoria.Main.p7;
 import static proyecto_memoria.Main.p8;
-import static proyecto_memoria.Main.puntosacumulativos;
+import static proyecto_memoria.Main.puntosacumulativos1;
 
 public class Pantalla2 extends javax.swing.JFrame {
 
     public Usuarios modificar;
-    public String nombreobtenido;
+    public String nombreobtenido2;
     public int id, punteo;
     public static int p1, p2, p3, p4, p5, p6, p7, p8, puntosacumulativos;
     public static String descripcion1 = null, descripcion2 = null;
@@ -309,16 +309,17 @@ public class Pantalla2 extends javax.swing.JFrame {
     public void BuscarDatos() {
         modificar = null;
         for (Usuarios v : jugadores) {
-            if (v.getId() == 0) {
+            if (v.getId() == 1) {
                 modificar = v;
                 break;
             }
         }
         if (modificar != null) {
             id = modificar.getId();
-            nombreobtenido = modificar.getNombre();
+            nombreobtenido2 = modificar.getNombre();
             punteo = modificar.getPunteo();
-            System.out.println(id + " " + nombreobtenido + " " + punteo);
+            System.out.println(id + " " + nombreobtenido2 + " " + punteo);
+
         } else {
             JOptionPane.showMessageDialog(rootPane, "Vendedor no encontrado");
         }
@@ -327,7 +328,7 @@ public class Pantalla2 extends javax.swing.JFrame {
 
     public void Modificardatos() {
         if (modificar != null) {
-            modificar.setNombre(nombreobtenido);
+            modificar.setNombre(nombreobtenido2);
             modificar.setId(id);
             modificar.setPunteo(puntosacumulativos);
 
@@ -345,7 +346,7 @@ public class Pantalla2 extends javax.swing.JFrame {
             jLabel2.setText(String.valueOf(secondspassed));
             if (secondspassed >= 45) {
                 salir();
-
+                secondspassed = 0;
             }
         }
     };
@@ -360,8 +361,24 @@ public class Pantalla2 extends javax.swing.JFrame {
         modificar = null;
         BuscarDatos();
         Modificardatos();
-        secondspassed = 45;
+        BuscarDatos();
+        detener();
+        verificaresultado();
+        
+    }
 
+    public void detener() {
+        secondspassed--;
+    }
+
+    public void verificaresultado() {
+        if (puntosacumulativos > puntosacumulativos1) {
+            JOptionPane.showMessageDialog(rootPane, "El ganador es " + nombreobtenido2);
+        } else if (puntosacumulativos == puntosacumulativos1) {
+            JOptionPane.showMessageDialog(rootPane, "HAY UN EMPATE :0");
+        } else if (puntosacumulativos1 > puntosacumulativos) {
+            JOptionPane.showMessageDialog(rootPane, "El ganador es " + Main.nombreobtenido);
+        }
     }
 
     public void verificar() {
@@ -380,59 +397,81 @@ public class Pantalla2 extends javax.swing.JFrame {
             puntosacumulativos = puntosacumulativos + 10;
             p2 = 0;
         } else if (p3 >= 2) {
-            jLabel7.setIcon(null);
-            Boton4.setEnabled(false);
-            jLabel11.setIcon(null);
-            Boton8.setEnabled(false);
+            jLabel5.setIcon(null);
+            Boton2.setEnabled(false);
+            jLabel18.setIcon(null);
+            Boton14.setEnabled(false);
             puntosacumulativos = puntosacumulativos + 10;
             p3 = 0;
         } else if (p4 >= 2) {
-            jLabel12.setIcon(null);
-            Boton9.setEnabled(false);
-            jLabel18.setIcon(null);
+            jLabel6.setIcon(null);
+            Boton3.setEnabled(false);
+            jLabel19.setIcon(null);
             Boton15.setEnabled(false);
             puntosacumulativos = puntosacumulativos + 10;
             p4 = 0;
         } else if (p5 >= 2) {
             jLabel8.setIcon(null);
             Boton5.setEnabled(false);
-            jLabel19.setIcon(null);
-            Boton16.setEnabled(false);
-            puntosacumulativos = puntosacumulativos + 10;
-            p5 = 0;
-        } else if (p6 >= 2) {
-            jLabel10.setIcon(null);
-            Boton7.setEnabled(false);
             jLabel15.setIcon(null);
             Boton12.setEnabled(false);
             puntosacumulativos = puntosacumulativos + 10;
+            p5 = 0;
+        } else if (p6 >= 2) {
+            jLabel11.setIcon(null);
+            Boton8.setEnabled(false);
+            jLabel12.setIcon(null);
+            Boton9.setEnabled(false);
+            puntosacumulativos = puntosacumulativos + 10;
             p6 = 0;
         } else if (p7 >= 2) {
-            jLabel13.setIcon(null);
-            Boton10.setEnabled(false);
-            jLabel16.setIcon(null);
-            Boton13.setEnabled(false);
+            jLabel14.setIcon(null);
+            Boton11.setEnabled(false);
+            jLabel9.setIcon(null);
+            Boton6.setEnabled(false);
             puntosacumulativos = puntosacumulativos + 10;
             p7 = 0;
         } else if (p8 >= 2) {
-            jLabel14.setIcon(null);
-            Boton11.setEnabled(false);
-            jLabel17.setIcon(null);
-            Boton14.setEnabled(false);
+            jLabel10.setIcon(null);
+            Boton7.setEnabled(false);
+            jLabel13.setIcon(null);
+            Boton10.setEnabled(false);
             puntosacumulativos = puntosacumulativos + 10;
             p8 = 0;
         }
         if (puntosacumulativos >= 80) {
             salir();
+            detener();
+            verificaresultado();
         }
     }
 
     private void Boton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton2ActionPerformed
         // TODO add your handling code here:
+        if (Boton2.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/11r.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel5.getWidth(), jLabel5.getHeight(), Image.SCALE_DEFAULT));
+            jLabel5.setIcon(icono);
+            p3 = p3 + 1;
+        } else {
+            jLabel5.setIcon(null);
+            p3 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton2ActionPerformed
 
     private void Boton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton3ActionPerformed
         // TODO add your handling code here:
+        if (Boton3.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/12p.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel6.getWidth(), jLabel6.getHeight(), Image.SCALE_DEFAULT));
+            jLabel6.setIcon(icono);
+            p4 = p4 + 1;
+        } else {
+            jLabel6.setIcon(null);
+            p4 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton3ActionPerformed
 
     private void Boton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton4ActionPerformed
@@ -451,34 +490,114 @@ public class Pantalla2 extends javax.swing.JFrame {
 
     private void Boton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton5ActionPerformed
         // TODO add your handling code here:
+        if (Boton5.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/13p.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel8.getWidth(), jLabel8.getHeight(), Image.SCALE_DEFAULT));
+            jLabel8.setIcon(icono);
+            p5 = p5 + 1;
+        } else {
+            jLabel8.setIcon(null);
+            p5 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton5ActionPerformed
 
     private void Boton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton6ActionPerformed
         // TODO add your handling code here:
+        if (Boton6.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/15p.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel9.getWidth(), jLabel9.getHeight(), Image.SCALE_DEFAULT));
+            jLabel9.setIcon(icono);
+            p7 = p7 + 1;
+        } else {
+            jLabel9.setIcon(null);
+            p7 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton6ActionPerformed
 
     private void Boton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton7ActionPerformed
         // TODO add your handling code here:
+        if (Boton7.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/16p.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel10.getWidth(), jLabel10.getHeight(), Image.SCALE_DEFAULT));
+            jLabel10.setIcon(icono);
+            p8 = p8 + 1;
+        } else {
+            jLabel10.setIcon(null);
+            p8 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton7ActionPerformed
 
     private void Boton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton8ActionPerformed
         // TODO add your handling code here:
+        if (Boton8.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/14p.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel11.getWidth(), jLabel11.getHeight(), Image.SCALE_DEFAULT));
+            jLabel11.setIcon(icono);
+            p6 = p6 + 1;
+        } else {
+            jLabel11.setIcon(null);
+            p6 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton8ActionPerformed
 
     private void Boton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton9ActionPerformed
         // TODO add your handling code here:
+        if (Boton9.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/14r.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel12.getWidth(), jLabel12.getHeight(), Image.SCALE_DEFAULT));
+            jLabel12.setIcon(icono);
+            p6 = p6 + 1;
+        } else {
+            jLabel12.setIcon(null);
+            p6 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton9ActionPerformed
 
     private void Boton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton10ActionPerformed
         // TODO add your handling code here:
+        if (Boton10.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/16r.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel13.getWidth(), jLabel13.getHeight(), Image.SCALE_DEFAULT));
+            jLabel13.setIcon(icono);
+            p8 = p8 + 1;
+        } else {
+            jLabel13.setIcon(null);
+            p8 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton10ActionPerformed
 
     private void Boton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton11ActionPerformed
         // TODO add your handling code here:
+        if (Boton11.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/15r.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel14.getWidth(), jLabel14.getHeight(), Image.SCALE_DEFAULT));
+            jLabel14.setIcon(icono);
+            p7 = p7 + 1;
+        } else {
+            jLabel14.setIcon(null);
+            p7 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton11ActionPerformed
 
     private void Boton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton12ActionPerformed
         // TODO add your handling code here:
+        if (Boton12.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/13r.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel15.getWidth(), jLabel15.getHeight(), Image.SCALE_DEFAULT));
+            jLabel15.setIcon(icono);
+            p5 = p5 + 1;
+        } else {
+            jLabel15.setIcon(null);
+            p5 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton12ActionPerformed
 
     private void Boton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton13ActionPerformed
@@ -497,10 +616,30 @@ public class Pantalla2 extends javax.swing.JFrame {
 
     private void Boton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton14ActionPerformed
         // TODO add your handling code here:
+        if (Boton14.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/11p.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel18.getWidth(), jLabel18.getHeight(), Image.SCALE_DEFAULT));
+            jLabel18.setIcon(icono);
+            p3 = p3 + 1;
+        } else {
+            jLabel18.setIcon(null);
+            p3 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton14ActionPerformed
 
     private void Boton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton15ActionPerformed
         // TODO add your handling code here:
+        if (Boton15.isSelected()) {
+            ImageIcon sonic = new ImageIcon(getClass().getResource("/Imagenes/12r.png"));
+            ImageIcon icono = new ImageIcon(sonic.getImage().getScaledInstance(jLabel19.getWidth(), jLabel19.getHeight(), Image.SCALE_DEFAULT));
+            jLabel19.setIcon(icono);
+            p4 = p4 + 1;
+        } else {
+            jLabel19.setIcon(null);
+            p4 = 0;
+        }
+        verificar();
     }//GEN-LAST:event_Boton15ActionPerformed
 
     private void Boton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton16ActionPerformed

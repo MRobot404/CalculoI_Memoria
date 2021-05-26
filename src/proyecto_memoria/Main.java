@@ -13,7 +13,7 @@ public class Main extends javax.swing.JFrame {
 
     public static ArrayList<Usuarios> jugadores = new ArrayList<>();
     public Usuarios modificar;
-    public String nombreobtenido;
+    public static String nombreobtenido;
     public int id, punteo;
 
     public Main() {
@@ -49,7 +49,7 @@ public class Main extends javax.swing.JFrame {
         if (modificar != null) {
             modificar.setNombre(nombreobtenido);
             modificar.setId(id);
-            modificar.setPunteo(puntosacumulativos);
+            modificar.setPunteo(puntosacumulativos1);
 
         } else {
             JOptionPane.showMessageDialog(rootPane, "Debe buscar un producto por nombre");
@@ -80,7 +80,7 @@ public class Main extends javax.swing.JFrame {
         myTimer.scheduleAtFixedRate(task, 1000, 1000);
 
     }
-    public static int p1, p2, p3, p4, p5, p6, p7, p8, puntosacumulativos;
+    public static int p1, p2, p3, p4, p5, p6, p7, p8, puntosacumulativos1;
     public static String descripcion1 = null, descripcion2 = null;
 
     public void salir() {
@@ -100,59 +100,59 @@ public class Main extends javax.swing.JFrame {
             Boton1.setEnabled(false);
             jLabel5.setIcon(null);
             Boton2.setEnabled(false);
-            puntosacumulativos = puntosacumulativos + 10;
+            puntosacumulativos1 = puntosacumulativos1 + 10;
             p1 = 0;
         } else if (p2 >= 2) {
             jLabel6.setIcon(null);
             Boton3.setEnabled(false);
             jLabel9.setIcon(null);
             Boton6.setEnabled(false);
-            puntosacumulativos = puntosacumulativos + 10;
+            puntosacumulativos1 = puntosacumulativos1 + 10;
             p2 = 0;
         } else if (p3 >= 2) {
             jLabel7.setIcon(null);
             Boton4.setEnabled(false);
             jLabel11.setIcon(null);
             Boton8.setEnabled(false);
-            puntosacumulativos = puntosacumulativos + 10;
+            puntosacumulativos1 = puntosacumulativos1 + 10;
             p3 = 0;
         } else if (p4 >= 2) {
             jLabel12.setIcon(null);
             Boton9.setEnabled(false);
             jLabel18.setIcon(null);
             Boton15.setEnabled(false);
-            puntosacumulativos = puntosacumulativos + 10;
+            puntosacumulativos1 = puntosacumulativos1 + 10;
             p4 = 0;
         } else if (p5 >= 2) {
             jLabel8.setIcon(null);
             Boton5.setEnabled(false);
             jLabel19.setIcon(null);
             Boton16.setEnabled(false);
-            puntosacumulativos = puntosacumulativos + 10;
+            puntosacumulativos1 = puntosacumulativos1 + 10;
             p5 = 0;
         } else if (p6 >= 2) {
             jLabel10.setIcon(null);
             Boton7.setEnabled(false);
             jLabel15.setIcon(null);
             Boton12.setEnabled(false);
-            puntosacumulativos = puntosacumulativos + 10;
+            puntosacumulativos1 = puntosacumulativos1 + 10;
             p6 = 0;
         } else if (p7 >= 2) {
             jLabel13.setIcon(null);
             Boton10.setEnabled(false);
             jLabel16.setIcon(null);
             Boton13.setEnabled(false);
-            puntosacumulativos = puntosacumulativos + 10;
+            puntosacumulativos1 = puntosacumulativos1 + 10;
             p7 = 0;
         } else if (p8 >= 2) {
             jLabel14.setIcon(null);
             Boton11.setEnabled(false);
             jLabel17.setIcon(null);
             Boton14.setEnabled(false);
-            puntosacumulativos = puntosacumulativos + 10;
+            puntosacumulativos1 = puntosacumulativos1 + 10;
             p8 = 0;
         }
-        if (puntosacumulativos >= 80) {
+        if (puntosacumulativos1 >= 80) {
             salir();
         }
     }
